@@ -23,6 +23,6 @@ struct InternalOptionsView: View {
             }
         }
         .tweakToggle(for: .Internal)
-        .navigationTitle("Internal Options")
+        .navigationTitle("Dahili Seçenekler")
     }
 }
