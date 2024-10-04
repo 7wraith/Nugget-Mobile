@@ -44,37 +44,37 @@ struct GestaltView: View {
     
     // list of device subtype options
     @State var deviceSubTypes: [DeviceSubType] = [
-        .init(key: -1, title: NSLocalizedString("Default", comment: "default device subtype")),
-        .init(key: 2436, title: NSLocalizedString("iPhone X Gestures", comment: "x gestures")),
-        .init(key: 2556, title: NSLocalizedString("iPhone 14 Pro Dynamic Island", comment: "iPhone 14 Pro SubType")),
-        .init(key: 2796, title: NSLocalizedString("iPhone 14 Pro Max Dynamic Island", comment: "iPhone 14 Pro Max SubType")),
-        .init(key: 2976, title: NSLocalizedString("iPhone 15 Pro Max Dynamic Island", comment: "iPhone 15 Pro Max SubType"), minVersion: Version(string: "17.0")),
-        .init(key: 2622, title: NSLocalizedString("iPhone 16 Pro Dynamic Island", comment: "iPhone 16 Pro SubType"), minVersion: Version(string: "18.0")),
-        .init(key: 2868, title: NSLocalizedString("iPhone 16 Pro Max Dynamic Island", comment: "iPhone 16 Pro Max SubType"), minVersion: Version(string: "18.0"))
+        .init(key: -1, title: NSLocalizedString("Varsayılan", comment: "varsayılan cihaz")),
+        .init(key: 2436, title: NSLocalizedString("iPhone X Alt Çizgi", comment: "X modelindeki alt hareket çubuğu")),
+        .init(key: 2556, title: NSLocalizedString("iPhone 14 Pro Dinamik Ada", comment: "iPhone 14 Pro")),
+        .init(key: 2796, title: NSLocalizedString("iPhone 14 Pro Max Dinamik Ada", comment: "iPhone 14 Pro Max")),
+        .init(key: 2976, title: NSLocalizedString("iPhone 15 Pro Max Dinamik Ada", comment: "iPhone 15 Pro Max"), minVersion: Version(string: "17.0")),
+        .init(key: 2622, title: NSLocalizedString("iPhone 16 Pro Dinamik Ada", comment: "iPhone 16 Pro SubType"), minVersion: Version(string: "18.0")),
+        .init(key: 2868, title: NSLocalizedString("iPhone 16 Pro Max Dinamik Ada", comment: "iPhone 16 Pro Max"), minVersion: Version(string: "18.0"))
     ]
     
     // list of mobile gestalt tweaks
     @State var gestaltTweaks: [GestaltSection] = [
         .init(tweaks: [
-            .init(label: "Enable Boot Chime", keys: ["QHxt+hGLaBPbQJbXiUJX3w"]),
-            .init(label: "Enable Charge Limit", keys: ["37NVydb//GP/GrhuTN+exg"]),
-            .init(label: "Enable Collision SOS", keys: ["HCzWusHQwZDea6nNhaKndw"]),
-            .init(label: "Enable Tap to Wake (iPhone SE)", keys: ["yZf3GTRMGTuwSV/lD7Cagw"]),
-            .init(label: "Enable iPhone 16 Camera Button Settings", keys: ["CwvKxM2cEogD3p+HYgaW0Q", "oOV1jhJbdV3AddkcCg0AEA"], values: [1, 1], minVersion: Version(string: "18.0")),
-            .init(label: "Disable Wallpaper Parallax", keys: ["UIParallaxCapability"], values: [0])
+            .init(label: "Önyükleme Zil Sesini Aç", keys: ["QHxt+hGLaBPbQJbXiUJX3w"]),
+            .init(label: "Şarj Sınırlaması Ayarla", keys: ["37NVydb//GP/GrhuTN+exg"]),
+            .init(label: "Çarpışma SOS'ini Aç", keys: ["HCzWusHQwZDea6nNhaKndw"]),
+            .init(label: "Dokunarak Uyandırma (iPhone SE içindir)", keys: ["yZf3GTRMGTuwSV/lD7Cagw"]),
+            .init(label: "iPhone 16 Kamera Butonu Ayarları Etkinleştir", keys: ["CwvKxM2cEogD3p+HYgaW0Q", "oOV1jhJbdV3AddkcCg0AEA"], values: [1, 1], minVersion: Version(string: "18.0")),
+            .init(label: "Parallax Duvar Kağıdını Devredışı Bırak", keys: ["UIParallaxCapability"], values: [0])
         ]),
         .init(tweaks: [
-            .init(label: "Enable Stage Manager Supported (WARNING: risky on some devices, mainly phones)", keys: ["qeaj75wk3HF4DwQ8qbIi7g"], values: [1]),
-            .init(label: "Enable Medusa (iPad Multitasking) (WARNING: may be risky on phones)", keys: ["mG0AnH/Vy1veoqoLRAIgTA", "UCG5MkVahJxG1YULbbd5Bg", "ZYqko/XM5zD3XBfN5RmaXA", "nVh/gwNpy7Jv1NOk00CMrw", "uKc7FPnEO++lVhHWHFlGbQ"], values: [1, 1, 1, 1, 1]),
-            .init(label: "Allow iPad Apps on iPhone", keys: ["9MZ5AdH43csAUajl/dU+IQ"], values: [[1, 2]]),
-            .init(label: "Disable Region Restrictions (ie. Shutter Sound)", keys: ["h63QSdBCiT/z0WU6rdQv6Q", "zHeENZu+wbg7PUprwNwBWg"], values: ["US", "LL/A"]),
-            .init(label: "Enable Apple Pencil", keys: ["yhHcB0iH0d1XzPO/CFd3ow"]),
-            .init(label: "Toggle Action Button", keys: ["cT44WE1EohiwRzhsZ8xEsw"])
+            .init(label: "Sahne Yöneticisi'ni Etkinleştir (UYARI:Bazı Cihazlarda,Özellikle iPhone'lar da Risklidir)", keys: ["qeaj75wk3HF4DwQ8qbIi7g"], values: [1]),
+            .init(label: "Medusa'yı Etkinleştir (iPad'lerde bulunan Multitasking özelliği) (UYARI: Bazı telefonlarda riskli olabilir)", keys: ["mG0AnH/Vy1veoqoLRAIgTA", "UCG5MkVahJxG1YULbbd5Bg", "ZYqko/XM5zD3XBfN5RmaXA", "nVh/gwNpy7Jv1NOk00CMrw", "uKc7FPnEO++lVhHWHFlGbQ"], values: [1, 1, 1, 1, 1]),
+            .init(label: "iPad Uygulamalarını iPhone da Çalıştır", keys: ["9MZ5AdH43csAUajl/dU+IQ"], values: [[1, 2]]),
+            .init(label: "Bölge Kısıtlamalarını Devre Dışı Bırak (örn. Deklanşör Sesi)", keys: ["h63QSdBCiT/z0WU6rdQv6Q", "zHeENZu+wbg7PUprwNwBWg"], values: ["US", "LL/A"]),
+            .init(label: "Apple Pencil Etkinleştir", keys: ["yhHcB0iH0d1XzPO/CFd3ow"]),
+            .init(label: "Eylem Butonu'nu Etkinleştir", keys: ["cT44WE1EohiwRzhsZ8xEsw"])
         ]),
         .init(tweaks: [
-            .init(label: "Toggle Internal Storage (WARNING: risky for some devices, mainly iPads)", keys: ["LBJfwOEzExRxzlAnSuI7eg"]),
-            .init(label: "Set as Apple Internal Install (ie Metal HUD in any app)", keys: ["EqrsVvjcYDdxHBiQmGhAWw"]),
-            .init(label: "Always On Display", keys: ["2OOJf1VhaM7NxfRok3HbWQ", "j8/Omm6s1lsmTDFsXjsBfA"], values: [1, 1], minVersion: Version(string: "18.0"))
+            .init(label: "Dahili Depolama'yı Etkinleştir (UYARI: Bazı cihazlar için risklidir, özellikle iPad'ler için)", keys: ["LBJfwOEzExRxzlAnSuI7eg"]),
+            .init(label: "Apple Dahili Yükleme olarak ayarlayın (yani herhangi bir uygulamada Metal HUD)", keys: ["EqrsVvjcYDdxHBiQmGhAWw"]),
+            .init(label: "Her Zaman Açık Ekran", keys: ["2OOJf1VhaM7NxfRok3HbWQ", "j8/Omm6s1lsmTDFsXjsBfA"], values: [1, 1], minVersion: Version(string: "18.0"))
         ])
     ]
     
@@ -104,7 +104,7 @@ struct GestaltView: View {
                 
                 // rdar fix (change resolution)
                 if resMode > 0 {
-                    Toggle("\(resTitle) (modifies resolution)", isOn: $modifyResolution).onChange(of: modifyResolution, perform: { nv in
+                    Toggle("\(resTitle) (çözünürlüğü değiştir)", isOn: $modifyResolution).onChange(of: modifyResolution, perform: { nv in
                         if nv {
                             gestaltManager.setGestaltValue(key: "IOMobileGraphicsFamily", value: resMode)
                         } else {
@@ -115,7 +115,7 @@ struct GestaltView: View {
                 
                 // device model name
                 VStack {
-                    Toggle("Change Device Model Name", isOn: $deviceModelChanged).onChange(of: deviceModelChanged, perform: { nv in
+                    Toggle("Cihaz Model Adını Değiştir", isOn: $deviceModelChanged).onChange(of: deviceModelChanged, perform: { nv in
                         if nv {
                             if deviceModelName != "" {
                                 gestaltManager.setGestaltValue(key: "ArtworkDeviceProductDescription", value: deviceModelName)
@@ -124,7 +124,7 @@ struct GestaltView: View {
                             gestaltManager.removeGestaltValue(key: "ArtworkDeviceProductDescription")
                         }
                     })
-                    TextField("Device Model Name", text: $deviceModelName).onChange(of: deviceModelName, perform: { nv in
+                    TextField("Cihaz Model Adı", text: $deviceModelName).onChange(of: deviceModelName, perform: { nv in
                         if deviceModelChanged {
                             gestaltManager.setGestaltValue(key: "ArtworkDeviceProductDescription", value: deviceModelName)
                         }
@@ -193,7 +193,7 @@ struct GestaltView: View {
     
     func showSubTypeChangerPopup() {
         // create and configure alert controller
-        let alert = UIAlertController(title: NSLocalizedString("Choose a device subtype", comment: ""), message: "", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: NSLocalizedString("Bir cihaz alt türü seçin", comment: ""), message: "", preferredStyle: .actionSheet)
         
         // create the actions
         
@@ -207,13 +207,13 @@ struct GestaltView: View {
                 }
                 if CurrentSubType == type.key {
                     // add a check mark
-                    newAction.setValue(true, forKey: "checked")
+                    newAction.setValue(true, forKey: "kontrol edildi")
                 }
                 alert.addAction(newAction)
             }
         }
         
-        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { (action) in
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Kapat", comment: ""), style: .cancel) { (action) in
             // cancels the action
         }
         
